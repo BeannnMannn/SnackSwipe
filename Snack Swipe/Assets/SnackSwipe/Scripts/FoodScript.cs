@@ -14,6 +14,8 @@ public class UniversalFood : MonoBehaviour
     private bool isDragging = false;
     private Vector3 offset;
     private Collider2D currentAnimal; // Tracks if we are hovering over an animal
+    [SerializeField] private AudioClip clickSound;
+
 
 
     //Offset exists so the foods center dosent snap to mouse
@@ -21,6 +23,8 @@ public class UniversalFood : MonoBehaviour
     {
         offset = transform.position - GetMousePos();
         isDragging = true;
+        AudioSource.PlayClipAtPoint(clickSound,transform.position);
+      
     }
 
     // Have the food follow the mouse when dragging 
@@ -57,6 +61,7 @@ public class UniversalFood : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         currentAnimal = other;
+       
     }
 
     private void OnTriggerExit2D(Collider2D other)

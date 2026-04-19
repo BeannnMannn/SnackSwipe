@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   likedAnimalTag: Kookaburra
+  clickSound: {fileID: 8300000, guid: da14945a656ff4b48899897c61e166db, type: 3}
 --- !u!50 &4149616579060269060
 Rigidbody2D:
   serializedVersion: 5
