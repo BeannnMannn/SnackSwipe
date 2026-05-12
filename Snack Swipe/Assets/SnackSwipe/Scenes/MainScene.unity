@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 94342433}
   - component: {fileID: 94342435}
   - component: {fileID: 94342434}
+  - component: {fileID: 94342436}
   m_Layer: 0
   m_Name: Kangaroo
   m_TagString: Kangaroo
@@ -253,6 +254,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &94342436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94342432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef54f811c2c3536468a0a7549843bc80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &344734373
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,7 +584,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 703918140911965262, guid: 9e4c4f042985eb7489f6b4e860e69da8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -592,7 +605,7 @@ Transform:
   m_GameObject: {fileID: 1061095625}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.98, z: 0}
+  m_LocalPosition: {x: 0, y: 0.98, z: 30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -746,6 +759,7 @@ GameObject:
   - component: {fileID: 1251166765}
   - component: {fileID: 1251166767}
   - component: {fileID: 1251166766}
+  - component: {fileID: 1251166768}
   m_Layer: 0
   m_Name: Koala
   m_TagString: Koala
@@ -869,6 +883,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1251166768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251166764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84d3277049833c43bba30a729967e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1470587537
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,9 +906,10 @@ GameObject:
   - component: {fileID: 1470587538}
   - component: {fileID: 1470587540}
   - component: {fileID: 1470587539}
+  - component: {fileID: 1470587541}
   m_Layer: 0
-  m_Name: Kookaburra
-  m_TagString: Kookaburra
+  m_Name: Platapus
+  m_TagString: Platapus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -896,7 +923,7 @@ Transform:
   m_GameObject: {fileID: 1470587537}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.56, y: -3.12, z: 9.985007}
+  m_LocalPosition: {x: -7.56, y: -3, z: 10}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1003,6 +1030,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1470587541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470587537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84d3277049833c43bba30a729967e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1752530234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,6 +1406,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1512492516935179560, guid: 2157177e0c52ddd4ab4781e5e17b543d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6726782831228656351, guid: 2157177e0c52ddd4ab4781e5e17b543d, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -1389,7 +1432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6726782831228656351, guid: 2157177e0c52ddd4ab4781e5e17b543d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6726782831228656351, guid: 2157177e0c52ddd4ab4781e5e17b543d, type: 3}
       propertyPath: m_LocalRotation.w

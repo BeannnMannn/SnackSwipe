@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: 9e85f34f34ed8854082df3e6f46ab372
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - clickSound: {instanceID: 0}
+  - happySpriteKoala: {fileID: -2574831735700645322, guid: 756d83e59d218054ebd71631e1b065d0, type: 3}
+  - happySpriteKangaroo: {fileID: -7538350222926003834, guid: 9dc6fcc617f45af47b520349926f5e27, type: 3}
+  - happySpritePlatapus: {fileID: -8981604769403971188, guid: 5242432a324ac624eab003fa31873e70, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

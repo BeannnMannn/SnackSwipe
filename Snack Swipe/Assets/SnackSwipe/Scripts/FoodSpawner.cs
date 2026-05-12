@@ -7,22 +7,27 @@ public class FoodSpawner : MonoBehaviour
 
     public static FoodSpawner Instance;
 
+    private int Index = 0;
+
     void Awake()
     {
+        
         Instance = this;
     }
 
     void Start()
     {
-        SpawnRandomFood();
+        SpawnNextFood();
     }
 
-    public void SpawnRandomFood()
+    public void SpawnNextFood()
     {
         // Pick a random Food from the array
-        int randomIndex = Random.Range(0, foodPrefabs.Length);
+
 
         // Create the food at the spawn points position
-        Instantiate(foodPrefabs[randomIndex], spawnPoint.position, Quaternion.identity);
+        Instantiate(foodPrefabs[Index], spawnPoint.position, Quaternion.identity);
+
+        Index++;
     }
 }

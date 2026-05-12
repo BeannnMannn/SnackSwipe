@@ -104,6 +104,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   likedAnimalTag: Koala
   clickSound: {fileID: 8300000, guid: da14945a656ff4b48899897c61e166db, type: 3}
+  happySpriteKoala: {fileID: -2574831735700645322, guid: 756d83e59d218054ebd71631e1b065d0, type: 3}
+  happySpriteKangaroo: {fileID: -5644216582394030836, guid: 9dc6fcc617f45af47b520349926f5e27, type: 3}
+  happySpritePlatapus: {fileID: -8981604769403971188, guid: 5242432a324ac624eab003fa31873e70, type: 3}
 --- !u!50 &1598715952843739664
 Rigidbody2D:
   serializedVersion: 5
