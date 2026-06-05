@@ -107,6 +107,10 @@ MonoBehaviour:
   happySpriteKoala: {fileID: -2574831735700645322, guid: 756d83e59d218054ebd71631e1b065d0, type: 3}
   happySpriteKangaroo: {fileID: -5644216582394030836, guid: 9dc6fcc617f45af47b520349926f5e27, type: 3}
   happySpritePlatapus: {fileID: -8981604769403971188, guid: 5242432a324ac624eab003fa31873e70, type: 3}
+  sadSpriteKoala: {fileID: 1260581862312177009, guid: 2412e7a757693af42819ebcb61a637e0, type: 3}
+  sadSpriteKangaroo: {fileID: -2186117491809623568, guid: acd7eb4efbd3437408b5178d595d6fb5, type: 3}
+  sadSpritePlatapus: {fileID: -4979482001165848402, guid: 873ce09d8195e5c499ffbce203fff42a, type: 3}
+  feedParticlePrefab: {fileID: 7039278752230932879, guid: d0e8585c41b629c4dbf7d4a24d96deee, type: 3}
 --- !u!50 &1598715952843739664
 Rigidbody2D:
   serializedVersion: 5

@@ -13,11 +13,17 @@ public class UniversalFood : MonoBehaviour
 
     private bool isDragging = false;
     private Vector3 offset;
-    private Collider2D currentAnimal; // Tracks if we are hovering over an animal
+    private Collider2D currentAnimal; // Tracks if hovering over an animal
     [SerializeField] private AudioClip clickSound;
     [SerializeField] private Sprite happySpriteKoala;
     [SerializeField] private Sprite happySpriteKangaroo;
     [SerializeField] private Sprite happySpritePlatapus;
+
+    [SerializeField] private Sprite sadSpriteKoala;
+    [SerializeField] private Sprite sadSpriteKangaroo;
+    [SerializeField] private Sprite sadSpritePlatapus;
+
+    [SerializeField] private ParticleSystem feedParticlePrefab;
     private Vector3 originalFoodScale;
 
     void Start()
@@ -46,6 +52,7 @@ public class UniversalFood : MonoBehaviour
     {
         isDragging = false;
         StartCoroutine(FoodShrinkPop());
+
         // If there is an animal within the food
         if (currentAnimal != null)
         {
@@ -58,31 +65,60 @@ public class UniversalFood : MonoBehaviour
                 {
                     animalRenderer.sprite = happySpriteKangaroo;
                 }
-                else
-                if (currentAnimal.CompareTag("Koala"))
+                else if (currentAnimal.CompareTag("Koala"))
                 {
                     animalRenderer.sprite = happySpriteKoala;
                 }
-                else
-                if (currentAnimal.CompareTag("Platapus"))
+                else if (currentAnimal.CompareTag("Platapus"))
                 {
                     animalRenderer.sprite = happySpritePlatapus;
                 }
 
-              
                 currentAnimal.GetComponent<MonoBehaviour>().StartCoroutine(PopAnimation(currentAnimal.transform));
-                // Print that the animal is happy destroy the food and spawn anotherfood
+
+               
+                ParticleSystem pfx = Instantiate(feedParticlePrefab, currentAnimal.transform.position, Quaternion.Euler(90, 0, 0));
                 Debug.Log(currentAnimal.name + " ate the food and is happy :)");
                 Destroy(gameObject);
                 FoodSpawner.Instance.SpawnNextFood();
             }
             else
             {
-                //Print the animal is sad and return the food to the middle of the screen 
-                Debug.Log(currentAnimal.name + " DIDNT ate the food and is sad :(");
-
+              
+                StartCoroutine(HandleSadAnimalRoutine());
             }
         }
+    }
+
+   
+    IEnumerator HandleSadAnimalRoutine()
+    {
+        
+        Debug.Log(currentAnimal.name + " DIDNT eat the food and is sad :(");
+        StartCoroutine(ShakeNoAnimation(currentAnimal.transform));
+
+        SpriteRenderer animalRenderer = currentAnimal.GetComponent<SpriteRenderer>();
+        Sprite originalSprite = animalRenderer.sprite; 
+
+        // Change to sad sprite
+        if (currentAnimal.CompareTag("Kangaroo"))
+        {
+            animalRenderer.sprite = sadSpriteKangaroo;
+        }
+        else if (currentAnimal.CompareTag("Koala"))
+        {
+            animalRenderer.sprite = sadSpriteKoala;
+        }
+        else if (currentAnimal.CompareTag("Platapus"))
+        {
+            animalRenderer.sprite = sadSpritePlatapus;
+        }
+
+        
+        yield return new WaitForSeconds(3f);
+
+       
+        animalRenderer.sprite = originalSprite;
     }
 
     // When the foods Box collider enters the animals box collider, set "currentAnimal" to other
@@ -100,7 +136,7 @@ public class UniversalFood : MonoBehaviour
     IEnumerator FoodClickPop()
     {
         Vector3 targetScale = originalFoodScale * 1.3f;
-        float time = 0.1f; // Make it very fast and snappy
+        float time = 0.1f; 
         float elapsed = 0;
 
         // Grow to 1.3x
@@ -111,6 +147,14 @@ public class UniversalFood : MonoBehaviour
             yield return null;
         }
         transform.localScale = targetScale;
+    }
+
+    IEnumerator Wait(float x)
+    {
+       
+        yield return new WaitForSeconds(x); 
+        
+     
     }
 
     IEnumerator FoodShrinkPop()
@@ -154,6 +198,48 @@ public class UniversalFood : MonoBehaviour
         }
 
         if (target != null) target.localScale = startScale;
+    }
+
+
+    IEnumerator ShakeNoAnimation(Transform target)
+    {
+
+        
+        
+        Vector3 startPosition = target.localPosition;
+
+        float duration = 0.35f; 
+        float elapsed = 0f;
+
+       
+        float intensity = target.GetComponent<RectTransform>() != null ? 15f : 0.15f;
+        float speed = 45f; 
+
+        while (elapsed < duration)
+        {
+            if (target == null) yield break;
+
+            float normalizedTime = elapsed / duration;
+
+      
+            float shakeFactor = Mathf.Sin(elapsed * speed);
+
+          
+            float fade = 1f - normalizedTime;
+
+      
+            float currentXOffset = shakeFactor * intensity * fade;
+            target.localPosition = startPosition + new Vector3(currentXOffset, 0f, 0f);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+       
+        if (target != null)
+        {
+            target.localPosition = startPosition;
+        }
     }
 
     //Get mouse pos in the 2D space
