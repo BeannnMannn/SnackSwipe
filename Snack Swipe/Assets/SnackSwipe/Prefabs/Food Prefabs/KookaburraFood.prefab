@@ -105,7 +105,7 @@ MonoBehaviour:
   likedAnimalTag: Platapus
   clickSound: {fileID: 8300000, guid: da14945a656ff4b48899897c61e166db, type: 3}
   happySpriteKoala: {fileID: -2574831735700645322, guid: 756d83e59d218054ebd71631e1b065d0, type: 3}
-  happySpriteKangaroo: {fileID: 2224390043230024828, guid: bb7f5d9d4365e03428dfd5b28ba5e6b4, type: 3}
+  happySpriteKangaroo: {fileID: -7538350222926003834, guid: 9dc6fcc617f45af47b520349926f5e27, type: 3}
   happySpritePlatapus: {fileID: -8981604769403971188, guid: 5242432a324ac624eab003fa31873e70, type: 3}
   sadSpriteKoala: {fileID: 1260581862312177009, guid: 2412e7a757693af42819ebcb61a637e0, type: 3}
   sadSpriteKangaroo: {fileID: -2186117491809623568, guid: acd7eb4efbd3437408b5178d595d6fb5, type: 3}
