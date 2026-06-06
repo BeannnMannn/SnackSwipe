@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ResetTimer : MonoBehaviour
 {
-    public float idleDuration = 300f;
+    public float idleDuration = 30f;
     private float timer;
     public string currentScene = SceneManager.GetActiveScene().name;
     public Animator animator;
